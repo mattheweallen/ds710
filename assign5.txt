@@ -1,0 +1,27 @@
+Matt Allen
+
+vowels = {"a","e","i","o","u"}
+consonants = {"b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z"}
+
+def piglatinize(word):
+    if word[0] in vowels: #case where words begin with vowels
+        return word + "yay"
+    
+    #https://stackoverflow.com/questions/7353968/checking-if-first-letter-of-string-is-in-uppercase
+    isUpper = word[0].isupper()
+    wordToLower = word.lower()
+    
+    pigLatinWord = ""
+    
+    ndex = 0
+    while ndex > len(word):             
+        if wordToLower[ndex] in vowels:
+            break
+        pigLatinWord = pigLatinWord
+        
+        ndex = ndex + 1
+        
+    
+    return word
+
+assert piglatinize("orange") == "orangeyay", "Hattay isyay otnay igpay atinlay!"
